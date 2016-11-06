@@ -1,0 +1,244 @@
+==================================
+Swarm 
+=========================================
+
+sudo su
+
+CA Server
+========================
+
+openssl genrsa -out ca-priv-key.pem 2048
+
+openssl req -config /usr/lib/ssl/openssl.cnf -new -key ca-priv-key.pem -x509 -days 1825 -out ca.pem
+
+Swarm Manager
+==========================================
+openssl genrsa -out swarm-priv-key.pem 2048
+
+openssl req -subj "/CN=swarm" -new -key swarm-priv-key.pem -out swarm.csr
+
+openssl x509 -req -days 1825 -in swarm.csr -CA ca.pem -CAkey ca-priv-key.pem -CAcreateserial -out swarm-cert.pem -extensions v3_req -extfile /usr/lib/ssl/openssl.cnf
+
+openssl rsa -in swarm-priv-key.pem -out swarm-priv-key.pem
+
+
+client Manager
+==========================================
+openssl genrsa -out client-priv-key.pem 2048
+
+openssl req -subj "/CN=client" -new -key client-priv-key.pem -out client.csr
+
+openssl x509 -req -days 1825 -in client.csr -CA ca.pem -CAkey ca-priv-key.pem -CAcreateserial -out client-cert.pem -extensions v3_req -extfile /usr/lib/ssl/openssl.cnf
+
+openssl rsa -in client-priv-key.pem -out client-priv-key.pem
+
+Node29 Manager
+==========================================
+openssl genrsa -out node29-priv-key.pem 2048
+
+openssl req -subj "/CN=node29" -new -key node29-priv-key.pem -out node29.csr
+
+openssl x509 -req -days 1825 -in node29.csr -CA ca.pem -CAkey ca-priv-key.pem -CAcreateserial -out node29-cert.pem -extensions v3_req -extfile /usr/lib/ssl/openssl.cnf
+
+openssl rsa -in node29-priv-key.pem -out node29-priv-key.pem
+
+Inspect
+==========================================
+openssl rsa -in node29 -noout -text
+openssl x509 -in node29 -noout -text
+
+
+On All command CA server 
+copy respective certificate - Swarm
+==========================================
+ssh turn@172.25.54.28 'mkdir -p /home/turn/.certs'
+scp ./ca.pem turn@172.25.54.28:/home/turn/.certs/ca.pem
+scp ./swarm-cert.pem turn@172.25.54.28:/home/turn/.certs/cert.pem
+scp ./swarm-priv-key.pem turn@172.25.54.28:/home/turn/.certs/key.pem
+
+
+
+copy respective certificate - Client
+==========================================
+ssh turn@172.25.54.27 'mkdir -p /home/turn/.certs'
+scp ./ca.pem turn@172.25.54.27:/home/turn/.certs/ca.pem
+scp ./client-cert.pem turn@172.25.54.27:/home/turn/.certs/cert.pem
+scp ./client-priv-key.pem turn@172.25.54.27:/home/turn/.certs/key.pem
+
+
+copy respective certificate - node
+==========================================
+ssh turn@172.25.54.29 'mkdir -p /home/turn/.certs'
+scp ./ca.pem turn@172.25.54.29:/home/turn/.certs/ca.pem
+scp ./node29-cert.pem turn@172.25.54.29:/home/turn/.certs/cert.pem
+scp ./node29-priv-key.pem turn@172.25.54.29:/home/turn/.certs/key.pem
+
+
+Step 5: Configure the Engine daemon for TLS
+Add certificate to DOCKER OPT in node 29
+===============================
+
+/etc/default/docker
+
+-H tcp://0.0.0.0:2376 --tlsverify --tlscacert=/home/turn/.certs/ca.pem --tlscert=/home/turn/.certs/cert.pem --tlskey=/home/turn/.certs/key.pem
+
+service docker restart
+
+Step 6: Create a Swarm cluster
+=========================================================
+sudo export TOKEN=$(docker run --rm swarm create)
+
+Above can can be browken into two comamnd 
+docker run --rm swarm create    #this will generae the token in first like
+sudo export TOKEN=e03316567b774f82a6c0dfba1a70a95d
+
+
+Start swarm manager
+-------------
+docker run -d -p 3376:3376 -v /home/turn/.certs:/certs:ro swarm manage --tlsverify --tlscacert=/certs/ca.pem --tlscert=/certs/cert.pem --tlskey=/certs/key.pem --host=0.0.0.0:3376 token://$TOKEN
+
+
+
+Join node 1
+-------------
+docker run -d swarm join --discovery=token://TOKEN --addr=172.25.54.29:2376
+docker daemon -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock
+docker daemon -H tcp://0.0.0.0:2376 -H unix:///var/run/docker.sock --tlsverify --tlscacert=/home/turn/.certs/ca.pem --tlscert=/home/turn/.certs/cert.pem --tlskey=/home/turn/.certs/key.pem
+
+sudo docker run -d swarm join --addr=172.25.54.29:2376 token://$TOKEN
+sudo docker run -d swarm join --addr=172.25.54.28:2376 token://$TOKEN
+sudo docker run -d swarm join --addr=172.25.54.26:2376 token://$TOKEN
+
+172.25.54.28
+
+Test swarm manager
+-----------------------------
+sudo docker --tlsverify --tlscacert=/home/turn/.certs/ca.pem --tlscert=/home/turn/.certs/cert.pem --tlskey=/home/turn/.certs/key.pem -H swarm:3376 version
+
+
+Step 9: Configure the Engine CLI to use TLS
+===================================================
+mkdir /home/turn/.docker
+
+cp /home/turn/.certs/{ca,cert,key}.pem /home/turn/.docker
+
+export DOCKER_HOST=tcp://swarm:3376
+export DOCKER_TLS_VERIFY=1
+export DOCKER_CERT_PATH=/home/turn/.docker/
+====================================================================
+
+Setup with Clustor https://docs.docker.com/swarm/install-manual/
+
+
+Setup Discovery and clustor in 26
+============================================================
+docker run -d -p 8500:8500 --name=consul progrium/consul -server -bootstrap
+docker run -d -p 4000:4000  --name=cluster swarm manage -H :4000 --replication --advertise 172.25.54.26:4000 consul://172.25.54.26:8500
+
+secondory
+docker run -d  --name=cluster-slave swarm manage -H :4000 --replication --advertise 172.25.54.26:4000 consul://172.25.54.26:8500
+
+
+Attach the node to each cluster 
+============================================================
+sudo docker daemon -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock&
+docker run -d swarm join --advertise=172.25.54.29:2375 consul://172.25.54.26:8500
+
+sudo docker daemon -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock &
+docker run -d swarm join --advertise=172.25.54.28:2375 consul://172.25.54.26:8500
+
+
+
+sudo docker daemon -H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock &
+
+
+DOCKER_OPTS="--dns 8.8.8.8 --dns 8.8.4.4 --dns 172.25.54.10 --dns 172.25.172.10 --dns 172.25.172.12 -H tcp://0.0.0.0:2375"
+
+
+docker -H 0.0.0.0:4000 info 
+-H tcp://0.0.0.0:4000 
+
+export DOCKER_HOST=0.0.0.0:4000
+
+
+Start the docker as daemon
+========================================
+https://docs.docker.com/engine/admin/configuring/
+
+Add DOCKER_OPTS="-H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock"
+sudo service docker restart
+
+
+
+Kill docker container 
+
+========================================================
+Setting up messos
+============================================================
+
+Step 1 Install mesos  : http://mesos.apache.org/gettingstarted/
+	 Do not forget confoguure and build command 
+
+Step 3 start mesos master (26 machine )
+./bin/mesos-master.sh --ip=172.25.54.26 --port=8999 --work_dir=/home/turn/turnWorkSpace/workspace
+
+Step 3 start mesos slave (28 and 29 machine )
+./bin/mesos-slave.sh --ip=172.25.54.28 --master=172.25.54.26:8999 --work_dir=/home/turn/turnWorkSpace/workspace
+./bin/mesos-slave.sh --ip=172.25.54.29 --master=172.25.54.26:8999 --work_dir=/home/turn/turnWorkSpace/workspace
+./bin/mesos-slave.sh --ip=172.25.54.26 --master=172.25.54.26:8999 --work_dir=/home/turn/turnWorkSpace/workspace
+
+Step 4 Setup jenkins as standalon
+ /opt/jenkins.war
+
+Step 5 download mesos plugin to jenkins
+
+Step 6 Go to the /configure screen - "Add a new cloud" - pick "Mesos"
+
+Step 7: Reflect the jenkins as mesos worker in 
+	If you want to test immediately connectivity to Mesos, you can set 'On-demand framework registration' to 'no' 
+
+
+=========================================================================
+Glusterfs
+============================================
+Setup
+https://www.howtoforge.com/how-to-install-glusterfs-with-a-replicated-volume-over-2-nodes-on-ubuntu-14.04
+
+sudo apt-get install glusterfs-server
+	  apt-get install glusterfs-server
+	
+
+
+
+vi /etc/hosts
+172.25.54.26    master  gluster26
+172.25.54.28    node28  gluster28
+172.25.54.29    node29  gluster29
+
+sudo gluster peer probe gluster26
+sudo gluster peer probe gluster28
+sudo gluster peer probe gluster29
+
+sudo gluster peer status
+
+
+sudo /etc/init.d/glusterfs-server restart
+/etc/init.d/glusterfs-server restart
+sudo service glusterfs-server start
+
+service glusterd status
+service glusterd restart
+Failed to restart glusterd.service: Unit glusterd.service failed to load: No such file or directory.
+
+
+
+mkdir -p /mnt/gluster
+
+sudo gluster volume create datapoint replica 3 transport tcp  gluster26:/mnt/gluster  gluster28:/mnt/gluster gluster29:/mnt/gluster 
+sudo gluster volume create volume1 replica 2 transport tcp gluster0.droplet.com:/gluster-storage gluster1.droplet.com:/gluster-storage force
+
+
+
+
+
+

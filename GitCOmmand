@@ -1,0 +1,135 @@
+COnfiguration
+======================================================
+Your Identity
+	git config --global user.name "Sudhir Sharma"
+	git config --global user.email sudhirsh@cybage.com
+
+Your Editor
+	git config --global core.editor emacs
+
+Checking Your Settings
+	git config --list
+
+read the setting\
+	git config user.name
+
+GIT Basic
+====================================
+Checking the Status
+	git status
+	echo 'My Project' > README
+	git status
+Tracking New Files
+	git add README
+
+Staging Modified Files
+	git add CONTRIBUTING.md
+	git status
+
+Short Status
+	git status -s
+Viewing Your Staged and Unstaged Changes
+	unstagged changes
+		git diff   
+	stagged changes
+		git diff --staged
+
+		
+Ignoring Files
+	cat .gitignore
+Skipping the Staging Area
+	git commit -a -m 'added new benchmarks'
+
+Removing Files from staging area and from your working directory
+===========================================================
+	git rm
+if you simpaly remove it then it will show in untracked file
+	
+rm PROJECTS.md	
+
+remove it from staging area
+git rm --cached README
+
+Moving Files
+	git mv file_from file_to
+
+Ignore pattern
+==================================================
+# no .a files
+*.a
+# but do track lib.a, even though you're ignoring .a files above
+!lib.a
+50Recording Changes to the Repository
+# only ignore the TODO file in the current directory, not subdir/TODO
+/TODO
+# ignore all files in the build/ directory
+build/
+# ignore doc/notes.txt, but not doc/server/arch.txt
+doc/*.txt
+# ignore all .txt files in the doc/ directory
+doc/**/*.txt
+
+View commit history
+==================================================
+git log(most recent commit will be displayed first)
+git log -p -2 (2 commit history with diff)
+git log --stat (summery of each commit)
+git log --pretty=format:"%h -%an, %ar : %s"
+
+
+Undoing the thing
+============================================
+--ammend
+$ git commit -m 'initial commit'
+$ git add forgotten_file
+$ git commit --amend
+
+=====================================================
+
+git config --global alias.unstage 'reset HEAD
+git unstage fileA
+
+git config --global alias.last 'log -1 HEAD'
+
+git last
+
+
+git config --global alias.co checkout
+git config --global  alias.br branch
+
+
+AHMSUMMERJUNE
+============================================
+Git branch
+git log --oneline --decorate
+
+git log --oneline --decorate --graph --all
+
+
+advance configuratin
+
+git config --global commit.template ~/.gitmessage.txt
+git commit
+
+merge and squesh\
+=================================================
+git log --abbrev-commit --pretty=oneline
+git show topic1
+git reflog	
+
+git stash
+git stash list
+git stash apply stash@{2}
+git merge -Xignore-space-change whitespace
+
+
+Git integratno
+=======================================================
+git svn clone file:///tmp/test-svn -T trunk -b branches -t tags
+git svn dcommit
+git svn rebase
+git svn branch opera
+git branch opera remotes/origin/opera
+git svn log
+git svn info
+

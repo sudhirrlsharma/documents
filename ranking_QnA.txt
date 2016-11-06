@@ -1,0 +1,83 @@
+Technical: 
+Java :
+OOPS:
+Client side : 
+Process: 
+Repository – Worked with SVN, no knowledge of GIT.
+Task management tool – Used JIRA.
+                Project Mgmt. Methodology : Agile- Not aware about that, Used SDLC 
+                Unit testing: Aware about JUnit test cases and implemented in pervious project.
+Code Review :
+
+
+Technical
+===========================================================
+
+Knowledge of technology (Java / .Net / C++ / LAMP / Obj C/ DB) & it's application?
+Needs pointers while addressing technical tasks
+Does he/she Unit test properly / How is his/her Code Quality?
+His/her overall technical capability?
+Does he/she review code? How effective is the review?
+good at reviews, good at unit testing
+How is his/her Effective Designing  & Solution providing ability?
+tends to make hasty decisions on design front
+Expertise on the project's technology domain knowledge?
+takes edge on Database front - Oracle
+
+IQ
+=======================================
+Does he/she think out of the box and provide innovative solutions?
+Does he/she use common sense while solving problems
+Is he/she able to clarify issues with/to the client
+Is he/she able to grasp the requirements problems, solutions etc.
+
+PROCESS
+====================================
+How much knowledge he/she has on Processes - CMMI, Agile, Cybage QMS etc
+Does he/she adhere to processes?
+Is he/she methodical in his/her daily tasks. Does he/she do her tasks systematically?
+Does he give any suggestions for process improvments in the project?
+
+Hardworking: 
+==============================================================
+Is ok with stretching and has no qualms about it.
+Notes: 
+"Is he/she meeting deadlines: THIS IS PERTAINING TO TECHNICAL ASSIGNMENTS ONLY
+For Processes, resource should be get and edge in respective parameter"
+Is his/her work always complete?
+Good at analysis and hence effective at defination of done
+Is he/she ready to put in extra hours, work on weekend and willing to stretch if required?
+Is he/she self-motivated and self-starter?
+High motivated and good inclination towards work
+He is not a self-starter; will not be prompt in assignment discussion 
+Is he/she sincere in the tasks assigned?
+Does he/she follow organization protocol and compliance?
+Does he/she communicate the risks in projects to you in a timely manner?
+Does he/she take ownership of the tasks/modules?
+Is he/she flexible towards coming out of the comfort zone?
+Is he/she able to handle (extend efforts for )  additional responsibilities like mentoring, training, additional R&D
+Does he/she multi-task very well? [Process should not be included here] 
+
+
+Communication
+=========================================================
+Grammar in written and verbal communication.How good is it?
+Simple plain language skills with less grammatical errors; good at DSR and technical updates
+Can write simple plain english but that holds scope of grammar and articulation improvement
+Written English communication - Emails, Docs. How clear is it? - Technical updates
+How Effective is the written communication? Does it produce the required effect?
+Is his/her verbal English understandable?
+continuous technical flow makes him more understandable
+thought process in English gets interrupted and hence takes back seat
+IS his/her English polished - fluent with good ascent
+Is his /her English very articulate (means using  adjectives, idioms, different words etc)
+Is he able to understand written and verbal english communication and make meaning out of it quickly?
+
+IP
+==========================================
+Is he/she a team player? Interacts well with juniors, seniors and peers?
+Is he approachable easily. Are people able to approach him/her without any inhibitions?
+Does he/she interact with superiors very nicely?
+Is he/she polite and nice in behaviour?
+Is he alert and participative in meetings? Does he/she understand what's going on in the meeting and asks questions?
+How effectively he/she mentors others?

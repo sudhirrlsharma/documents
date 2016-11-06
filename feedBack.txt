@@ -1,0 +1,534 @@
+Technical Evalution
+==================================
+Parag Shah
+Amit Patel
+Dipulkumar Patel
+Dhruvik Parikh
+Sachit Patel
+Janak Shah
+Parth Shah
+Krunal Vachheta
+Mohammad Ali
+Ekjot Kaur
+Utsav Kumar
+Prashant Tahiliani
+Smriti Karn
+
+Feed back for Parag
+*********************************************
+Positive
+******************************************
+VEry good at angular, Capable to do component level development,Very good at finding the root cause in FET,  Also good at understanding the business  in javascript
+
+Improvement
+==================================
+1. Debug and code well but concept are not clear specially javascript
+2. Need to improve on Advance concept of Angular
+3. Need to improve on D3
+4. Need to improve on code quality
+
+
+
+FeedBack Amit Patel 
+***************************************
+Positive
+********************************************
+Very Strong at investigating the issue, he goes deep and find the other issue as well, flexible with other technology as well including shell script(linux), he do think about engineering in coding
+
+IMprovements : 
+1. Need to improve on Angular, he has show the improvement from last appraisals, but need to take more complex tickets
+2. Need to improve on build tool (Grunt, Gradle) -
+3. Should take challenging task(specially in Angular) 
+4. Need to improve on code quality
+
+
+Feedback DipulKumar Patel
+*****************************************************************************************
+Positive
+******************************************************************************************
+Good at java and Angular both, knows the code well, very good at debugging and fixging any complex issue, Technology concept are clear to him
+
+Improvements:
+***********************************************
+1. Need to improve on code quality, 
+2. Need to improve on writing the negative test cases
+4. Advance concept of Angular
+5. Need to learnn D3
+
+Feedback for Dhruvik
+******************************************************************
+Positive
+*****************************************************************
+1. Very good at Java and back end technology, writs very neat code, focus on documentation as well
+2. Applyies the enggeniring very well
+
+
+Improvement
+*****************************************************************
+1. Registive above frontend technology 
+2. Need lots of improvement on front end technology 
+3. Needs to improve on Analysis and debugging, (Good at writing the code from start )
+
+
+Feedback for Sachit
+*******************************************************************************
+Positive
+*******************************************************************************
+1. Understand the business use case verywell, get into rootcause of the problem, 
+2. Very good at code analysis
+
+IMprovement
+************************************************************
+1. Needs to improve the code quality a lots
+3. Need to learn the concept in Angular and java
+
+
+Feedback for Janak
+********************************************************************************
+Positive
+**********************************************************************************
+1. Very good at CSS and HTML front
+2. Analysis of readline spec is really good
+4. Describ  the problem well ()
+3. Applies the enginnering in CSS
+
+Improvement
+**********************************************************
+1. Needs improvement in Algular and javascript
+2. Need to work on code quality
+
+
+
+
+Parth
+******************************************************************************************
+Positive
+********************************************************************************************
+1. Debugging and Analysis is good, does thorow analysis
+
+Improvement
+***************************************************************************
+1. Needs to improve a lot in code quality  both (java and JS)
+2 .Needs to improve on Angular 
+3. Needs to improve on writing the unit test case
+
+Krunal
+**************************************************
+Positive
+***************************************************** 
+1. Good at CSS and Html, 
+
+Improvement
+*****************************************************
+1 Needs to improve a lot on Angular and javascript(may be he puts too much effort on solving the issue then understanding the concept)
+
+
+Mohammad.
+****************************************
+Positive
+********************************************
+1.  Knows java
+Learning fast (Angular , js and D13)
+3. Good aylitical skills
+2. Also intrusted in other environmenal technology (Jenkins, Code coverage)
+
+Improvement
+=======================================
+1. Need to improve on enginnering (he  is able to do the taks but with lots of help)
+2. Need to improve on Angular  and D3
+
+
+
+
+Ekjob
+************************************************
+Positive
+*******************************************
+1.  Knows java
+Learning fast
+Understand the issue really well
+
+
+Improvement
++++++++++++++++++++++++++++++++++++++++++++++
+Need to improve on engineering
+Need to improve on D3 and Angular
+Need to imrove on project design
+
+
+Utsav
+***********************************************
+Positive
+*****************************************************
+1, Average at Html and CSS, 
+
+Improvement
+********************************************
+1. Need to improve a lot jjavascript and Angular
+2. Need to get familier with all the FET technology in FET
+
+
+Prasant
+************************************************************************
+Positives
+**********************************************************************
+1 . Average at Java
+
+Improvement
++================================
+Need to improve on java, Angular,Silanium
+
+
+
+
+Smriti
+******************************************************
+Postitive
+******************************************************
+1. Show capability to learn, Average in java
+
+Improvement
+****************************************************************
+1. Slow learner (May be puts too much effort in solving the issue)
+2. Need to improve on java/silanium and javascript
+
+
+Other Note
+************************************
+1. Amit -wants to be lead,  Behaviours toward team member and leads is nt good, show aggresstion and attitue while expalining other
+2. Parag & Dipul - Second line developer
+3. 
+
+
+
+Processes
+============================================
+Janak Shah
+Krunal Vachheta
+Parag Shah
+Dhruvik Parikh
+Amit Patel
+Dipulkumar Patel
+Sachit Patel
+Parth Shah
+Utsav Kumar
+Ekjot Kaur
+Mohammad Ali
+Smriti Karn
+Prashant Tahiliani
+
+
+Janak Saha
+====================================================================
+Storng point
+++++++++++===================================================
+1. Takes the owner ship on process (he asked the scrum borad, and had mantained really well)
+2. Reguarly update the Jira and DSR with pricise details and on time
+3. Pro-activly  create MOM
+4. He is clinical and methodological in his takes 
+
+
+Krunal Vachheta
+==================================================================
+Positive
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+1. Follow the process really well, Update JIRA/DSR with pricise details, also follow/update subtask/ scrum board really well proactively 
+
+
+Parag Shaha
+===============================================
+Positive
+=====================================================
+1. Proactivinly follow the process update the JIRA and DSR really well
+
+Improvement
+===============================================
+1. Need to improve on lcoal testing
+2. Does not create/update the analysis in analysis ticket  some time
+
+
+Dhrivik Parikh
+================================================================================
+Positive
+====================================================================================
+1. Takes the ownership of senidng the DSR, update it well, update the jira properly
+2. Methodological in his task
+
+Improvement
+===============================================
+1. Need to be on time in meeting
+
+
+Amit Patel
+============================================
+Positive
+============================================
+1. Properly communicate things on time as agreed 
+2. Pro-actively participate in all meeting
+3. Methodological in his task
+
+Improvement
+1. Need to update the DSR with proper dependency
+2. some time does not create the subtask as agreed 
+
+
+Dipulkumar Patel
+======================================
+Positive
+=========================================
+1. Follow required Cybage process
+2. Creae the proper sub task as aggreed
+
+Improvement
+1.  Need to update DSR properly
+2. Need to be on time in meeting
+3. Need to update analysis ticket with proper analysis
+
+
+
+Sachit Patel
+============================================
+Positive
+============================================
+1. Follow required Cybage process
+2. Create the proper sub task as aggreed
+
+Improvement
+1. Need to update DSR properly
+2. Need to be on time in meeting
+3. Need to be pro-active in meeting(retro and sprint planning)
+4. some time does not follow formal cloth policy on monday
+
+
+
+
+Parth Shah
+=========================================================
+Positive
++++++++++++++++++++++++++++++++++++++++
+
+Improvement
++++++++++++++++++++++++++++++++++++++++
+1. Need to improve on updating the DSR (dependency section)
+2. Need to be more mothodological in his working style
+
+
+
+
+
+Utsav Kumar
+Utsav Kumar
+Ekjot Kaur
+Mohammad Ali
+Smriti Karn
+Prashant Tahiliani
+----------------------------------
+Need to learn the Cybage and turn process
+
+
+
+
+
+
+
+
+
+
+
+
+Communication
+==========================================
+Janak Shah
+Parag Shah
+Ekjot Kaur
+Amit Patel  -- > He need to be direct --> while explaing
+Dhruvik Parikh 
+Krunal Vachheta
+Dipulkumar Patel
+Utsav Kumar
+Mohammad Ali
+Prashant Tahiliani
+Sachit Patel  --> Unclarity in communication
+Parth Shah -->
+Smriti Karn
+
+
+
+Janak 
+===========================
+Positive
+1. Provide very clear update (Jira/email)
+2. Technical problem are explained really well, some time presentation of the problem is really nice
+3. Verbal communication is equally good
+
+Improvement
+Can make his English fluent with good ascent
+
+Parag Shah
+===========================
+Positive
+1. Communicants the update clearly (Jira/email)
+2. Able to explained  technical problem really well
+3. Need to improve in verbal communication in pitch and tone
+
+Improvement
+For technical email, can further improve on organizing the content
+
+
+Ekjot Kaur
+==============================================
+Positive
+==========================================
+1. Good verbal/written communication (Provide the crispy update in stand-up also write grametically correct email)
+2. Explain the technical problem really well
+
+
+Improvement
+1. Difficulty in writing the  complex technical problem
+
+
+Dhruvik
+==============================================
+Positive
+==========================================
+1. Good written communication 
+2. Can write the simple plain enghlish 
+
+
+Improvement
+1. Difficulty in explain/writing the technical problem, many time we will have to re-draft his technical comment
+
+
+
+
+Krunal Vachheta
+=============================================
+Positive
+1. Can write simple plain english
+2. Technical problem are explained well (for CSS and HTML), some time presentation of the problem is really nice
+
+Improvement
+Need to improve on verbal/written communication(standup update are not clear sometime, ) )
+difficulty in describing/writing the business cases
+
+
+Amit Patel
+=============================================
+Positive
+1. Can write simple plain english
+2. Able to explain the technical problem
+
+Improvement
+-- Many time he is not direct, he makes the story around the issue
+
+Dipulkumar Patel
+=============================================
+Positive
+1. Can speak and write simple plain(english
+
+Improvement
+-- Many his email/jira update need redrafting 
+
+Utsav Kumar
+=============================================
+Positive
+1. Non technical Verble/written  communication is good 
+Improvement
+-- Need improvement while discussing/writing the technical issue
+
+
+Mohammad Ali
+=============================================
+1. Can speak and write simple plain(english
+
+Improvement
+======================================
+Need to improve on organizing the content 
+Need to improve on technical writing
+
+Prashant Tahiliani
+=============================================
+1. Can speak and write simple plain(english
+
+Improvement
+======================================
+Need to improve on organizing the content 
+Need to improve on technical writing
+
+Smriti Karn
+=============================================
+1. Can speak and write simple plain(english
+
+Improvement
+======================================
+some time her updates repeted, she can't express tengible update
+Need to improve on technical writing
+
+
+Sachit Patel
+
+Improvement
+-- Need improvement on  discussing/writing the technical issue
+
+Parth
+
+Improvement
+-- Need improvement on  discussing/writing the technical issue
+
+
+
+Attitude
+=======================================
+Parag Shah
+Krunal Vachheta
+Sachit Patel
+Janak Shah
+Dipulkumar Patel
+Dhruvik Parikh
+Parth Shah
+Ekjot Kaur
+Mohammad Ali
+Utsav Kumar
+Smriti Karn
+Prashant Tahiliani
+Amit Patel
+
+
+
+
+
+
+
+Intiatives
+=====================================================
+Janak Shah
+Dipulkumar Patel
+Amit Patel
+Sachit Patel
+Krunal Vachheta
+Parag Shah
+Parth Shah
+Dhruvik Parikh
+Utsav Kumar
+Smriti Karn
+Mohammad Ali
+Ekjot Kaur
+Prashant Tahiliani
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Parth
+	1. Engennering is completly missing in him, he just know the syntext
+	
+
